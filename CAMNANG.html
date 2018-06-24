@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .container {
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+
+        }
+
+        td {
+            border: 1px solid #ACC3D8;
+            padding: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 40px;
+            font-weight: bold;
+        }
+
+        .dong-1 {
+            text-align: center;
+            color: #fff;
+            background-color: #525AA3;
+            text-transform: uppercase;
+        }
+
+        .dong-2 {
+            text-align: center;
+        }
+
+        .dong-2 .cot-4 {
+            text-align: left;
+        }
+
+        #button {
+            margin: 20px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        #menu {
+            height: 40px;
+            background-color: #3e9a95;
+        }
+
+        #menu ul li {
+            line-height: 40px;
+            float: left;
+            padding-left: 110px;
+            list-style: none;
+        }
+
+        #menu ul li a {
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        #menu ul li a:hover {
+            text-decoration: none;
+            color: orange;
+            cursor: pointer;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Lịch tiêm chủng</title>
+    <link rel="shortcut icon" href="favicon.ico\2.jpg">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="3.css">
+    <!-- Latest compiled and minified JavaScript -->
+</head>
+
+<body>
+    <div id="menu">
+
+        <ul>
+            <li>
+                <a href="index.php">CÁC LOẠI VẮC XIN</a>
+
+            </li>
+            <li>
+                <a href="DICHVU.html">CÁC DỊCH VỤ</a>
+            </li>
+            <li>
+                <a style="color: royalblue" href="CAMNANG.html">CẨM NANG TIÊM CHỦNG</a>
+            </li>
+            <li>
+                <a href="BANGGIA.html">BẢNG GIÁ</a>
+            </li>
+            <li>
+                <a href="error.html">ĐẶT LỊCH TIÊM</a>
+            </li>
+            <li>
+                <a href="KHAOSAT.html">KHẢO SÁT DỊCH VỤ</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container ">
+        <div id="search">
+            <span class="icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <input class="form-control" type="search" id="search" placeholder="Search..." />
+        </div>
+
+
+        <div style="text-align: center;color: royalblue">
+            <h3>LỊCH TIÊM CHỦNG</h3>
+        </div>
+
+        <div class="table-2">
+            <table>
+                <tr class="dong-1">
+                    <td>
+                        <p>Tuổi/Vắc Xin</p>
+                    </td>
+                    <td>
+                        <p>Sơ sinh</p>
+                    </td>
+                    <td>
+                        <p>2 tháng </p>
+                    </td>
+                    <td>
+                        <p>3 tháng</p>
+                    </td>
+                    <td>
+                        <p>4 tháng
+
+                        </p>
+                    </td>
+                    <td>
+                        <p>6 tháng
+
+                        </p>
+                    </td>
+                    <td>
+                        <p>9 tháng
+
+                        </p>
+                    </td>
+                    <td>
+                        <p>10 tháng
+
+                        </p>
+                    </td>
+                    <td>
+                        <p>12 tháng
+
+                        </p>
+                    </td>
+                    <td>
+                        <p>15 tháng
+
+                        </p>
+                    </td>
+                    <td>
+                        <p>18 tháng
+
+                        </p>
+                    </td>
+                    <td>
+                        <p>2-3 tuổi
+
+                        </p>
+                    </td>
+                    <td>
+                        <p>4 -6 tuổi
+
+                        </p>
+                    </td>
+                    <td>
+                        <p>7-10 tuổi
+
+                        </p>
+                    </td>
+                    <td>
+                        <p>11-12 tuổi
+
+                        </p>
+                    </td>
+                </tr>
+                <tr class="dong-2">
+                    <td>
+                        <p>Phòng lao </p>
+                    </td>
+                    <td class="cot-4" style="text-align: center">
+                        <p>x</p>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <td> </td>
+                        <td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                </tr>
+                <tr class="dong-2">
+                    <td>
+                        <p>HT kháng viêm gan B (mẹ mắc viên gan B) </p>
+                    </td>
+                    <td class="cot-4" style="text-align: center">
+                        <p>x</p>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <td> </td>
+                        <td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                </tr>
+                <tr class="dong-2">
+                    <td>
+                        <p>Phòng viên gan B </p>
+                    </td>
+                    <td class="cot-4" style="text-align: center">
+                        <p>x</p>
+
+                        <td>
+                            <p> x</p>
+                        </td>
+
+                        <td>
+                            <p>x</p>
+                        </td>
+                        <td>
+                            <p>x</p>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                </tr>
+                <tr class="dong-2">
+                    <td>
+                        <p>Phòng bạch hầu, ho gà, uốn ván </p>
+                    </td>
+                    <td class="cot-4" style="text-align: center">
+                        <p></p>
+
+                        <td>
+                            <p> x</p>
+                        </td>
+
+                        <td>
+                            <p>x</p>
+                        </td>
+                        <td>
+                            <p>x</p>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                        <td style="text-align: center" colspan="2">
+                            <p>x</p>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                </tr>
+                <tr class="dong-2">
+                    <td>
+                        <p>Phòng nhiễm HIB </p>
+                    </td>
+                    <td class="cot-4" style="text-align: center">
+                        <p></p>
+
+                        <td>
+                            <p> x</p>
+                        </td>
+
+                        <td>
+                            <p>x</p>
+                        </td>
+                        <td>
+                            <p>x</p>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                        <td style="text-align: center" colspan="2">
+                            <p>x</p>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                </tr>
+                <tr class="dong-2">
+                    <td>
+                        <p>Phòng bại liệt </p>
+                    </td>
+                    <td class="cot-4" style="text-align: center">
+                        <p></p>
+
+                        <td>
+                            <p> x</p>
+                        </td>
+
+                        <td>
+                            <p>x</p>
+                        </td>
+                        <td>
+                            <p>x</p>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                        <td style="text-align: center" colspan="2">
+                            <p>x</p>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                </tr>
+                <tr class="dong-2">
+                    <td>
+                        <p>Phòng tiêu chảy do Rota Virus </p>
+                    </td>
+                    <td class="cot-4" style="text-align: center">
+                        <p></p>
+                        <td style="text-align: center" colspan="4">
+                            <p>x 2 hoặc 3 liều cách nhau ít nhất 1 tháng </p>
+                        </td>
+
+                        <td>
+                            <p> </p>
+                        </td>
+
+                        <td>
+                            <p></p>
+                        </td>
+                        <td>
+                            <p></p>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+
+
+                </tr>
+                <tr class="dong-2">
+                    <td>
+                        <p>Phòng viêm phổi, viêm màng não do phế cầu</p>
+                    </td>
+
+                    <td></td>
+                    <td>
+                        <p>x </p>
+                    </td>
+
+                    <td>
+                        <p>x</p>
+                    </td>
+                    <td>
+                        <p>x</p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p>x</p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+
+
+                </tr>
+                <tr class="dong-2">
+                    <td>
+                        <p>Phòng cúm mùa </p>
+                    </td>
+                    <td class="cot-4" style="text-align: center">
+                        <p></p>
+
+
+                        <td>
+                            <p> </p>
+                        </td>
+
+                        <td>
+                            <p></p>
+                        </td>
+                        <td>
+                            <p></p>
+                        </td>
+                        <td style="text-align: center" colspan="10">
+                            <p>x 2 liều cách nhau ít nhất một tháng cho lần tiêm đầu tiên và hàng năm tiêm nhắc lại 1 liều duy
+                                nhất.
+                            </p>
+                        </td>
+
+
+
+                </tr>
+                <tr class="dong-2">
+
+                    <td>
+                        <p>Phòng viêm não Nhật Bản </p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: center " colspan="2">
+                        <p>x 2 liều cách nhau từ 1 đến 2 tuần </p>
+
+                    </td>
+                    <td colspan="2"></td>
+                    <td></td>
+                    <td style="text-align: center " colspan="3">
+                        <p>Tiêm nhắc lại 3 năm 1 lần đến khi trẻ đến 15 tuổi</p>
+                </tr>
+                </td>
+                <tr class="dong-2">
+
+                    <td>
+                        <p>Phòng sởi </p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p>x</p>
+                    </td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p>Tiêm mũi nhắc lại </p>
+                    </td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="dong-2">
+
+                    <td>
+                        <p>Phòng sởi, quai bị, Rubella </p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td colspan="2" style="text-align: center">x</td>
+                    <td colspan="2"></td>
+                    <td colspan="2" style="text-align: center">
+                        <p>x</p>
+                    </td>
+                    <td></td>
+                    <td></td>
+
+
+                </tr>
+                <tr class="dong-2">
+
+                    <td>
+                        <p>Phòng thủy đậu </p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td colspan="8" style="text-align: center">x 2 liều cách nhau ít nhất 3 tháng
+                    </td>
+
+
+
+                </tr>
+                <tr class="dong-2">
+
+                    <td>
+                        <p>Phòng viêm gan A </p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td colspan="8" style="text-align: center">x 2 liều cách nhau ít nhất 6 tháng
+                    </td>
+
+
+
+                </tr>
+                <tr class="dong-2">
+
+                    <td>
+                        <p>Phòng viêm não mô cầu A + C </p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="4" style="text-align: center">x 1 liều Nhắc lại 1 liều sau 3 năm
+                    </td>
+
+
+
+                </tr>
+                <tr class="dong-2">
+
+                    <td>
+                        <p>Phòng viêm não mô cầu B + C </p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                    <td colspan="10" style="text-align: center">x 2 liều cách nhau ít nhất 2 tháng
+                    </td>
+
+
+
+                </tr>
+                <tr class="dong-2">
+
+                    <td>
+                        <p>Phòng thương hàn </p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="4" style="text-align: center">x 1 liều và tiêm nhắc lại 3 năm 1 lần
+
+                    </td>
+
+
+
+                </tr>
+                <tr class="dong-2">
+
+                    <td>
+                        <p>Phòng ung thư cổ tử cung do HPV </p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="3" style="text-align: center">x 3 liều trong độ tuổi từ 9-26 tuổi
+
+                    </td>
+
+
+
+                </tr>
+                <tr class="dong-2">
+
+                    <td>
+                        <p>Phòng bệnh tả </p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="4" style="text-align: center">x 3 liều trong độ tuổi từ 9-26 tuổi
+
+                    </td>
+
+
+
+                </tr>
+
+
+
+                <div id="button" align="center">
+                    <a href="index.php" type="button" class="btn">Quay lại</a>
+                    <!-- <button  type="button" class="btn">Quay lại</button> -->
+                </div>
+        </div>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
