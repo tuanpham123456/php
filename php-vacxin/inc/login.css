@@ -1,0 +1,9 @@
+body{
+	background-color: gray;
+}
+.btn-login{
+    float: right;
+    color:white;
+    background-color: #1a53ff;
+}
+

@@ -1,0 +1,42 @@
+body{
+    background-color: gray;
+}
+form{
+    position: relative;
+
+}
+table{
+    position: absolute;
+    top: 20px;
+    right: 45%;
+}
+#username{
+    cursor: pointer;
+    border-radius: 5px;
+}
+#pass{
+    cursor: pointer;
+    border-radius: 5px;
+}
+#name{
+    cursor: pointer;
+    border-radius: 5px;
+}
+#email{
+    cursor: pointer;
+    border-radius: 5px;
+}
+#dangky{
+    cursor: pointer;
+    border-radius: 5px;
+}
+.btn-register{
+    color:white;
+    background-color: #1a53ff;
+
+}
+.btn-login{
+    float: right;
+    color:white;
+    background-color: #1a53ff;
+}
