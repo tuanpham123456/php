@@ -10,7 +10,7 @@ function myFunction(){
     return $a;
 }
 echo myFunction();
-function mySum($a =4, $b =585)
+function mySum($a =4, $b =0)
 {
      // if ($tatol % 2 == 0){
     //     echo "<br>Chẵn";
