@@ -6,9 +6,6 @@
 		.error {
 			color: red;
 		}
-		.succes{
-			color: blue;
-		}
 	</style>
 </head>
 <body>
@@ -18,6 +15,7 @@
 	$errRePass = '';
 	$errGender = '';
 	$errCity = '';
+	$success = '';
 	$check = true;
 	$name = $password = $rePassword = $errGender 
 	= $errCity = '';
@@ -71,7 +69,7 @@
 			}
 		}
 		if ($check) {
-			echo "Register success!";
+			$check = "Register success!";
 		}
 	}
 		if(isset($_POST['submit'])){
@@ -113,6 +111,7 @@
 				}
 				else{
 					move_uploaded_file($fileTempLocation,"uploadFile/".$filleName  );
+					echo "Upload file succes";
 				}
 
 			}
@@ -145,7 +144,7 @@
 			<span class="error"><?php echo $errCity;?></span>
 		</p>
 		<p>Avatar: <input type="file" name="uploadFile">
-		<span class="success"><?php echo "upload file success"?></span>
+		<span ><?php $check;?></span>
 		</p>
 		<input type="submit" name="submit" value="Register">
 	</form>
