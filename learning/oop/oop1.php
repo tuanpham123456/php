@@ -5,26 +5,28 @@
 		var $Phone;
 		var $Address;
 
-	}
-	function Add(){
+		function Add(){
+
+		}
+		function Register(){
+
+		}
+		function Login(){
+
+		}
+		function View(){
+
+		}
+		function List(){
+
+		}
+
 
 	}
-	function Register(){
-
-	}
-	function Login(){
-
-	}
-	function View(){
-
-	}
-	function List(){
-
-	}
-	$user = new User();
-	/**
-	 * 
-	 */
+	
+		/**
+	 	* 
+	 	*/
 	class Customer extends User
 	{
 		
@@ -38,12 +40,14 @@
 
 		}
 
+	
 	}
-
 	$customer = new Customer();
 	$customer ->Register();
 	$customer ->Login();
 	$customer ->View();
 	$customer ->Payment();
+
+	
 
 ?>
