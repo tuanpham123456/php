@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 ?>
 <html>
 <head>
@@ -22,7 +22,7 @@ session_start();
 		$username = addslashes($username);
 		$password = strip_tags($password);
 		$password = addslashes($password);
-		if ($username == "" || $password =="") {
+		if ($username == "" || $password == "") {
 			echo "username hoặc password bạn không được để trống!";
 		}else{
 			$sql = "select * from users where username = '$username' and password = '$password' ";
