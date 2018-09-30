@@ -41,8 +41,9 @@
 	}
 
 	$customer = new Customer();
-	$customer ->Add();
-	$customer ->List();
+	$customer ->Register();
+	$customer ->Login();
+	$customer ->View();
 	$customer ->Payment();
 
 ?>
