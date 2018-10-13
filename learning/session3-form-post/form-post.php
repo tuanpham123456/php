@@ -129,7 +129,7 @@
 			<span class="error"><?php echo $errRePass;?></span>
 		</p>
 		<p>Gender:
-			<input type="radio" name="gender" value="male" <?php echo $checkMale;?>> Male
+			<input type="checkbox" name="gender" value="male" <?php echo $checkMale;?>> Male
 			<input type="radio" name="gender" value="female" <?php echo $checkFemale;?>> Female
 			<input type="radio" name="gender" value="other" <?php echo $checkOther;?>> Other
 			<span class="error"><?php echo $errGender;?></span>
