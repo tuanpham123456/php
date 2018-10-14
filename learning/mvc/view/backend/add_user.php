@@ -8,7 +8,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="index.php?action=add_user" method="post">
+            <form role="form" action="admin.php?action=add_user" method="post">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputName">Name</label>

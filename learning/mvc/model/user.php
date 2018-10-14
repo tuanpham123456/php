@@ -1,6 +1,10 @@
 <?php 
-	include 'config/connectdb.php';
-	class User extends ConnectDB{
+	class User {
+		public $conn;
+		function __construct() {
+			$connect = new ConnectDB();
+			$this->conn = $connect->connect();
+		}
 		function InsertUser($name, $username, $password){
 			$sql = "INSERT INTO users (name, username, password) VALUES ('$name', '$username', '$password')";
 			return mysqli_query($this->conn, $sql);
@@ -29,20 +33,6 @@
 			AND password = '$password'";
 			$result = mysqli_query($this->conn, $sql);
 			return $result->num_rows;
-		}
-		function getlogin($usersname, $passmahoabase)
-		{
-			include "config/connectdb.php";
-			$sql = "SELECT * FROM usersandpass WHERE usersname = '$usersname' AND password = '$passmahoabase'";
-			//$check = mysqli_query($connect, $sql);
-			$num_rows = mysqli_num_rows(mysqli_query($connect, $sql));	
-			//$num_rows = mysqli_fetch_row($sql);
-			return $num_rows;
-		}
-		function mahoabase($password)
-		{
-		$mahoa = md5($password);
-		return $wasmahoa;
 		}
 	}
 ?>
