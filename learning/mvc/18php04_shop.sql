@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2.1
--- http://www.phpmyadmin.net
+-- version 4.8.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 13, 2018 at 07:37 PM
--- Server version: 5.7.23-0ubuntu0.16.04.1
--- PHP Version: 7.0.32-1+ubuntu16.04.1+deb.sury.org+1
+-- Host: 127.0.0.1
+-- Generation Time: Oct 19, 2018 at 11:11 AM
+-- Server version: 10.1.33-MariaDB
+-- PHP Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,11 +25,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `body` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `body`) VALUES
+(3, 'iphone', 'đẹp'),
+(4, 'iphoneX', 'good');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
   `id` int(11) NOT NULL,
+  `product_category_id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `price` float DEFAULT NULL,
   `image` varchar(255) NOT NULL
@@ -37,11 +60,31 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `price`, `image`) VALUES
-(1, 'Product 1', 1000, 'product1.jpg'),
-(2, 'Product 2', 800, 'product2.jpg'),
-(3, 'Product 3', 1200, 'product3.jpg'),
-(4, 'Product ', 500, 'product4.jpg');
+INSERT INTO `products` (`id`, `product_category_id`, `name`, `price`, `image`) VALUES
+(4, 1, 'Product ', 500, 'product4.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_categories`
+--
+
+CREATE TABLE `product_categories` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `product_categories`
+--
+
+INSERT INTO `product_categories` (`id`, `name`) VALUES
+(1, 'Apple'),
+(2, 'Samsung'),
+(3, 'Oppo'),
+(4, 'Xiaomi'),
+(5, 'Sony'),
+(6, 'Vivo');
 
 -- --------------------------------------------------------
 
@@ -66,16 +109,29 @@ INSERT INTO `users` (`id`, `name`, `username`, `password`) VALUES
 (11, 'bbbbbbbbbbbbbb1111111', 'JUNIORWORKS', '554'),
 (12, 'JUNIORWORKS', 'abc', '111'),
 (13, 'bbb1111111111', 'bbb22222', '554'),
-(14, 'bbbbbbbbbbbbbb6', 'JUNIORWORKS', '554');
+(14, 'bbbbbbbbbbbbbb6', 'JUNIORWORKS', '554'),
+(15, 'Canh', 'tuanpham', '1');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product_categories`
+--
+ALTER TABLE `product_categories`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -89,15 +145,30 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `product_categories`
+--
+ALTER TABLE `product_categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

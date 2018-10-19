@@ -51,6 +51,19 @@
             <li><a href="admin.php?action=list_product""><i class="fa fa-circle-o"></i> List products</a></li>
           </ul>
         </li>
+         <li class="treeview">
+          <a href="#">
+            <i class="fa  fa-cubes"></i>
+            <span>News</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="admin.php?action=add_news""><i class="fa fa-circle-o"></i> Add News</a></li>
+            <li><a href="admin.php?action=list_product""><i class="fa fa-circle-o"></i> List News</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
