@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2.1
--- http://www.phpmyadmin.net
+-- version 4.8.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 14, 2018 at 11:16 AM
--- Server version: 5.7.23-0ubuntu0.16.04.1
--- PHP Version: 7.0.32-1+ubuntu16.04.1+deb.sury.org+1
+-- Host: 127.0.0.1
+-- Generation Time: Oct 28, 2018 at 10:25 AM
+-- Server version: 10.1.33-MariaDB
+-- PHP Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -77,6 +79,7 @@ INSERT INTO `product_categories` (`id`, `name`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `role` varchar(25) NOT NULL,
   `name` varchar(255) NOT NULL,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL
@@ -86,14 +89,17 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `username`, `password`) VALUES
-(7, 'OK da sua 1113', 'jjjjrrr', '554'),
-(8, 'JUNIORWORKS edddd', 'JUNIORWORKS', '554'),
-(11, 'bbbbbbbbbbbbbb1111111', 'JUNIORWORKS', '554'),
-(12, 'JUNIORWORKS', 'abc', '111'),
-(13, 'bbb1111111111', 'bbb22222', '554'),
-(14, 'bbbbbbbbbbbbbb6', 'JUNIORWORKS', '554'),
-(15, 'Canh', 'hoaicanh', '1');
+INSERT INTO `users` (`id`, `role`, `name`, `username`, `password`) VALUES
+(7, '', 'OK da sua 1113', 'jjjjrrr', '554'),
+(8, '', 'JUNIORWORKS edddd', 'JUNIORWORKS', '554'),
+(11, '', 'bbbbbbbbbbbbbb1111111', 'JUNIORWORKS', '554'),
+(12, '', 'JUNIORWORKS', 'abc', '111'),
+(13, '', 'bbb1111111111', 'bbb22222', '554'),
+(14, '', 'bbbbbbbbbbbbbb6', 'JUNIORWORKS', '554'),
+(15, '', 'Canh', 'tuanpham', '1'),
+(16, 'admin', 'tuan', 'tuanpham1', '4'),
+(17, '', '1', '1', '1'),
+(18, 'admin', '1', '1', '1');
 
 --
 -- Indexes for dumped tables
@@ -126,16 +132,20 @@ ALTER TABLE `users`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
 --
 -- AUTO_INCREMENT for table `product_categories`
 --
 ALTER TABLE `product_categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
