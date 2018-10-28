@@ -2,7 +2,7 @@
 	include 'config/connectdb.php';
 	include 'model/user.php';
 	include 'model/product.php';
-	include 'model/news.php';
+	include 'model/cart.php';
 	class BackendController {
 		/*
 			* Kiem tra request tu view
@@ -19,18 +19,25 @@
 						$name     = $_POST['name'];
 						$username = $_POST['username'];
 						$password = $_POST['password'];
+						$role     = $_POST['role'];
 						$userModel = new User();
-						$userModel->InsertUser($name, $username, $password);
+						$userModel->InsertUser($name, $role, $username, $password);
 						header("Location: admin.php?action=list_user");
 					}
 					include 'view/backend/add_user.php';
 					break;
 				case 'list_user':
-					if(!isset($_SESSION['login'])){
+					$page = isset($_GET['page'])?$_GET['page']:1;
+					$limit = 3;
+					if(!isset($_SESSION['login']) || $_SESSION['role'] != 'admin'){
 						header("Location: login.php");
 					}
 					$userModel = new User();
-					$listUser =$userModel->getListUser();
+					$listUser = $userModel->getListUser($page, $limit);
+
+					$totalUser = $userModel->getTotalUser();
+					$numberPage = ceil($totalUser/$limit);
+
 					//view du lieu
 					include 'view/backend/list_user.php';
 					break;
@@ -76,10 +83,7 @@
 						$name                = $_POST['name'];
 						$price               = $_POST['price'];
 						$product_category_id = $_POST['product_category_id'];
-						$image = $_FILES['image'];
-						$path = 'dist/img/';
-						$imageName = uniqid().$image['name'];
-						move_uploaded_file($image['tmp_name'], $path.$imageName);
+						$imageName = $this->uploadImage($_FILES['image']);
 						$productModel = new Product();
 						$productModel->InsertProduct($name, $price, $imageName, $product_category_id);
 						header("Location: admin.php?action=list_product");
@@ -88,9 +92,7 @@
 					include 'view/backend/add_product.php';
 					break;
 				case 'list_product':
-					if(!isset($_SESSION['login'])){
-						header("Location: login.php");
-					}
+					$this->checkLogin();
 					$productModel = new Product();
 					$listProduct =$productModel->getListProductAdmin();
 					//view du lieu
@@ -158,19 +160,6 @@
 					// Day la view hien thi EDIT
 					include 'view/backend/edit_product.php';
 					break;	
-				case 'add_news':
-					if(!isset($_SESSION['login'])){
-						header("Location: login.php");
-					}
-					if(isset($_POST['add_news'])) {
-						$title = $_POST['title'];
-						$body  = $_POST['body'];
-						$addTitle = new News();
-						$addTitle->InsertNews($title, $body);
-						header("Location: admin.php?action=add_news");
-					}
-					include 'view/backend/add_news.php';
-					break;
 				case 'login':
 					//view du lieu
 					if (isset($_POST['login'])) {
@@ -180,6 +169,7 @@
 						$checkLogin = $userModel->checkLogin($username, $password);
 						if($checkLogin) {
 							$_SESSION['login'] = $username;
+							$_SESSION['role']  = $checkLogin;
 							header("Location: admin.php?action=list_user");
 						} else {
 							header("Location: login.php");
@@ -187,7 +177,6 @@
 					}
 					
 					break;
-				
 				case 'logout':
 					unset($_SESSION['login']);
 					header("Location: login.php");
@@ -201,6 +190,18 @@
 					break;
 			}
 
+		}
+		function uploadImage($imageUpload){
+			$image = $imageUpload;
+			$path = 'dist/img/';
+			$imageName = uniqid().$image['name'];
+			move_uploaded_file($image['tmp_name'], $path.$imageName);
+			return $imageName;
+		}
+		function checkLogin(){
+			if(!isset($_SESSION['login'])){
+				header("Location: login.php");
+			}
 		}
 	}
 ?>

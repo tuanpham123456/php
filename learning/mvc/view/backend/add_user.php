@@ -22,6 +22,13 @@
                   <label for="exampleInputPassword">Password</label>
                   <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" name="password">
                 </div>
+                <div class="form-group">
+                  <label>Role</label>
+                  <select class="form-control" name="role">
+                    <option value="admin">Admin</option>
+                    <option value="customer">Customer</option>
+                  </select>
+                </div>
               </div>
               <!-- /.box-body -->
 
